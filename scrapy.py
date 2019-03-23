@@ -12,3 +12,4 @@ print(soup.table.prettify())
 for row in soup.table.findAll('tr'):
     for cell in row.findAll('td'):
         print (cell.prettify())
+        print (cell.text.replace('&nbsp;', ''))
