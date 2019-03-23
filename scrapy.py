@@ -9,6 +9,7 @@ soup = BeautifulSoup(html,'lxml')
 table = soup.find('tbody', attrs={'class': 'stripe'})
 print(soup.table.prettify())
 
+list_of_row = []
 for row in soup.table.findAll('tr'):
     list_of_cell=[]
     for cell in row.findAll('td'):
@@ -17,3 +18,5 @@ for row in soup.table.findAll('tr'):
         print (cell.text.replace('&nbsp;', ''))
         list_of_cell.append(text)
     print(list_of_cell)
+    list_of_row.append(list_of_cell)
+print("\n",list_of_row)
