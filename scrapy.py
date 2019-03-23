@@ -7,4 +7,7 @@ html = response.content
 
 soup = BeautifulSoup(html,'lxml')
 table = soup.find('tbody', attrs={'class': 'stripe'})
-print(soup.table)
+print(soup.table.prettify())
+
+for row in soup.table.findAll('tr'):
+    print (row.prettify())
