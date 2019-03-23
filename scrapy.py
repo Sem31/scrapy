@@ -1,3 +1,4 @@
+import csv
 import requests
 from bs4 import BeautifulSoup
 
@@ -20,3 +21,7 @@ for row in soup.table.findAll('tr'):
     print(list_of_cell)
     list_of_row.append(list_of_cell)
 print("\n",list_of_row)
+
+outfile = open("./data.csv", "w")
+writer = csv.writer(outfile) 
+writer.writerows(list_of_row)
