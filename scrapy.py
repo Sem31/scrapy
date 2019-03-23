@@ -10,4 +10,5 @@ table = soup.find('tbody', attrs={'class': 'stripe'})
 print(soup.table.prettify())
 
 for row in soup.table.findAll('tr'):
-    print (row.prettify())
+    for cell in row.findAll('td'):
+        print (cell.prettify())
