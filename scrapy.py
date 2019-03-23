@@ -24,4 +24,5 @@ print("\n",list_of_row)
 
 outfile = open("./data.csv", "w")
 writer = csv.writer(outfile) 
+writer.writerow(["Names"])
 writer.writerows(list_of_row)
